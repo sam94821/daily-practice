@@ -7,6 +7,12 @@ import org.junit.jupiter.api.Test;
 class RemoveDuplicatesTest {
 	
 	RemoveDuplicates remDupObj = new RemoveDuplicates();
+	
+	@Test
+	void emptyArray()
+	{
+		assertEquals(0,remDupObj.removeDuplicates(new int[] {}));
+	}
 	@Test
 	void basicTest() {
 		assertEquals(2,remDupObj.removeDuplicates(new int[] {1,1,2}));

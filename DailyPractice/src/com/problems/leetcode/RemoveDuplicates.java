@@ -1,6 +1,7 @@
 package com.problems.leetcode;
- 
+
 /**
+ * FileName : RemoveDuplicates.java
  * ---------------------------------------------------------------------------
  * Problem Statement : 
  * 
@@ -30,7 +31,12 @@ public class RemoveDuplicates {
 	public int removeDuplicates(int[] nums) {
 		
 		int newIndex =0;
-		
+		//for empty array
+		if(nums.length==0)
+        {
+            return 0;
+        }
+        
 		for(int i =0;i<nums.length-1;i++) {
 			
 			if(nums[i]!=nums[i+1]) {
