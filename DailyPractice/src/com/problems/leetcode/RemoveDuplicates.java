@@ -23,7 +23,7 @@ package com.problems.leetcode;
  * ---------------------------------------------------------------------------
  * 
  * @author Sam
- *         ---------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * 
  */
 
@@ -31,23 +31,23 @@ public class RemoveDuplicates {
 
 	public int removeDuplicates(int[] nums) {
 
-		int newIndex = 0;
+		int newIndex = 1;
 
 		// for empty array
 		if (nums.length == 0) {
+
 			return 0;
 		}
 
 		for (int i = 0; i < nums.length - 1; i++) {
 
 			if (nums[i] != nums[i + 1]) {
-
-				nums[newIndex] = nums[i];
+				
+				nums[newIndex] = nums[i+1];
 				newIndex++;
 			}
 		}
-		nums[newIndex++] = nums[nums.length - 1];
-
+		
 		return newIndex;
 	}
 }
