@@ -32,50 +32,91 @@ package com.problems.leetcode.plusOne;
  * -----------------------------------------------------------------------------
  * 
  * @author Sam
- *         -----------------------------------------------------------------------------
+ * -----------------------------------------------------------------------------
  */
 
 public class PlusOne {
 
 	public int[] plusOne(int[] digits) {
+		
+		if(digits==null||digits.length==0)
+			
+	        return new int[0];
+	 
+	    int carry = 1;
+	    
+	    for(int i=digits.length-1; i>=0; i--){
+	    	
+	        int sum = digits[i]+carry;
+	        
+	        if(sum>=10){
+	            carry=1;
+	        }else{
+	            carry=0;
+	        }
+	        digits[i]=sum%10;
+	    }
+	 
+	    if(carry==1){
+	        int[] result = new int[digits.length+1];
+	        System.arraycopy(digits, 0, result, 1, digits.length);
+	        result[0]=1;
+	        return result;
+	    }else{
+	        
+	        return digits;
+	    }
 
+		/* 
+		
 		int arrayLength = digits.length;
-
-		//empty array
-		if (arrayLength == 0) {
-
-			return null;
-
-		} else if (arrayLength == 1) {  // array with one element
-
-			if (digits[0] == 9) {
-
-				int[] newArray = { 1, 0 };
-
-				return newArray;
-			} else {
-
-				digits[0] = digits[0] + 1;
-			}
-		}else 
+		int currentDigit;
+			
+		if(arrayLength==0)
 		{
-			if(digits[arrayLength-1]!=9) {
-
-				digits[arrayLength-1] = digits[arrayLength-1] +1;
-
-			}
-			else {
-
-				digits[arrayLength-2] = digits[arrayLength-2] + 1;
-				digits[arrayLength-1] = 0;
-				
-				/*Logic for checking if the previous element is also 9 
-				  yet to be written */
-
-			}
-
+			resArray = null;
 		}
+		else
+		{
+			
+		currentDigit= digits[digits.length-1];
+		
+		
+		for(int i = arrayLength-1; i>=0 ; i--) {
+		
+			if(currentDigit==9) {
+				
+				if(i==0) {
+					
+					//
+					//new array;
+					//return new array
+				}else {
+					
+					digits[i] = 0;
+					
+					if(digits[i-1]==9) {
 
-		return digits;
-	}
+						currentDigit = digits[i-1];
+						digits[i-1] = digits[i-1] + 1;					
+					}else {
+						
+						digits[i-1] = digits[i-1] + 1;
+						break;
+						
+					}
+
+					
+				}
+				//return digits;
+			}else {
+				
+				digits[i] = digits[i] + 1;
+				break;
+			}
+			
+		}
+		}
+		return digits; */
+	} 
 }
