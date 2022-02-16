@@ -53,24 +53,33 @@ public class RecursiveSingleDigitSum {
 	
 	public int superDigit(String n, int k) {
 		
+		if(k< 1 || k> Math.pow(10, 5))
+		{
+			return -1;
+		}
+		else
+		{
 		//repeat number
 		String concatenatedNumber = new String(new char[k]).replace("\0",n);
 		
 		//converting string to number
 		long concatenatedLongNumber = Integer.parseInt(concatenatedNumber);
-		
+		if(concatenatedLongNumber == 0)
+		{
+			return (int)concatenatedLongNumber;
+		}
+		else
+		{	
 		return calculateSum(concatenatedLongNumber);
-			
+		}
+	}
 	}
 	private int calculateSum(long number) {
 		
-		if(number<10)
+		
+		if(number > 0 && number < 10)
 		{
-			return (int)number;
-		}
-		else if(number == 0)
-		{
-			return 0;
+			return (int) number;
 		}
 		else		
 		{	
