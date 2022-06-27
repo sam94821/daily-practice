@@ -9,10 +9,13 @@ class PalindromeNumberTest {
 	PalindromeNumber pnObj = new PalindromeNumber();
 	
 	@Test
-	void palindromeTest() {
+	void palindromeTestOne() {
 		assertEquals(true,pnObj.isPalindrome(1331));
 	}
-
+	@Test
+	void palindromeTestTwo() {
+		assertEquals(true,pnObj.isPalindrome(131));
+	}
 	@Test
 	void notPalindromeTest() {
 		assertEquals(false,pnObj.isPalindrome(133));
@@ -20,5 +23,14 @@ class PalindromeNumberTest {
 	@Test
 	void negativeNumberTest() {
 		assertEquals(false,pnObj.isPalindrome(-121));
+	}
+	@Test
+	void singleDigitNumberTestOne() {
+		assertEquals(true,pnObj.isPalindrome(1));
+	}
+	
+	@Test
+	void singleDigitNumberTestZero() {
+		assertEquals(true,pnObj.isPalindrome(0));
 	}
 }
