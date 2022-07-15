@@ -4,7 +4,30 @@ public class SearchInsertPosition {
 
 	public int searchInsert(int[] nums, int target) {
 		
-		 int i=0; 
+		int index = 0;
+		for(int i = 0; i<nums.length;i++) {
+			
+			if(target == nums[i])
+			{
+				index = i;
+				//System.out.println(i);
+				break;
+				
+			}else if(target< nums[i])
+			{
+				index = i;
+				break;
+					//System.out.println(j);
+			}else if(target>nums[i])
+			{
+				index = i+1;
+				
+			}
+		}		
+		
+		return index;
+		
+			/* int i=0; 
 		 int j=nums.length-1;
 		 
 		 while(i<=j){
@@ -19,7 +42,8 @@ public class SearchInsertPosition {
 		        }
 		    }
 		 
-		    return i;
+		    return i; */
+		
 		
 		/*int tIndex = 0;
 		int begin = 0;
