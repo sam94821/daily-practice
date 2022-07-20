@@ -7,6 +7,31 @@ import java.util.Arrays;
 public class MergeSortedArray {
 	public int[] merge(int[] nums1,int m, int[] nums2, int n) {
 		
+		int i =0,j=0,k=0;
+		int[] result = new int[m+n];
+		
+		while(i<m && j<n) {
+			//System.out.println("Inside while");
+			if(nums1[i]<=nums2[j]) {
+				//System.out.println("nums1 :"+nums1[i]);
+				result[k] = nums1[i];
+				i++;
+			}else {
+				result[k] = nums2[j];
+				j++;
+			}
+			k++;
+		}
+		while(i<m) {
+			result[k] = nums1[i];
+			k++;
+			i++;
+		}
+		while(j<n) {
+			result[k] = nums2[j];
+			j++;
+			k++;
+		}
 		/*int j = 0;
 		for(int i =m; i<nums1.length;i++) {
 					
@@ -17,7 +42,7 @@ public class MergeSortedArray {
 		Arrays.sort(nums1);
 		*/
 		
-		int[] result = new int[m+n];
+		/*int[] result = new int[m+n];
 		
 		int temp, j  = 0,i=0;
 		result[0] = nums1[0];
@@ -53,7 +78,7 @@ public class MergeSortedArray {
 				}
 			j++;
 			}
-		}
+		} */
 		for(int a : result) {
 			System.out.println(a);
 		}
