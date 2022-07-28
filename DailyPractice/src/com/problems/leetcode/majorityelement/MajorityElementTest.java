@@ -27,4 +27,11 @@ class MajorityElementTest {
 	void emptyArray() {
 		assertEquals(0, meObj.majorityElement(new int[]{}));
 	}
+	
+	@Test
+	void oddLengthOfArray() {
+		assertEquals(-3, meObj.majorityElement(new int[]{-3,-3,-3,4,1}));
+	}
+	
+	
 }
